@@ -1,0 +1,27 @@
+/* styles.css */
+
+.app {
+    display: flex; /* Add flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Set height to viewport height */
+    flex-direction: column; /* Arrange children in a column */
+  }
+  
+  .image-section {
+    border: 2px solid #ccc; /* Border style */
+    width: 400px; /* Set width */
+    height: 300px; /* Set height */
+    display: flex; /* Add flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    overflow: hidden; /* Hide overflow content */
+    margin-bottom: 20px; /* Add margin at the bottom */
+  }
+  
+  .image-section img {
+    max-width: 100%; /* Ensure image fits within container */
+    max-height: 100%; /* Ensure image fits within container */
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  

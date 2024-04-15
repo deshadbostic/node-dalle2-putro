@@ -37,6 +37,17 @@ function App() {
   const handleInputChange = (event) => {
     setTextInput(event.target.value);
   };
+  const handleDownload = () => {
+    if (imageUrl) {
+      // Create a temporary anchor element
+      const anchor = document.createElement('a');
+      anchor.href = imageUrl;
+      anchor.download = 'generated_image.png'; // Set the download filename
+      document.body.appendChild(anchor); // Append the anchor to the document body
+      anchor.click(); // Simulate a click on the anchor
+      document.body.removeChild(anchor); // Remove the anchor from the document body
+    }
+  };
 
   return (
     <div className="app">
@@ -52,6 +63,7 @@ function App() {
             onChange={handleInputChange} // Add onChange handler to update state
           />
           <button onClick={getImages}>Generate</button>
+          {imageUrl && <button onClick={handleDownload}>Download</button>} {/* Download button */}
         </div>
         <p>Start with a detailed description<span className="randomize">Randomize?</span></p>
       </section>

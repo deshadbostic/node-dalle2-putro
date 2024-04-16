@@ -23,16 +23,14 @@ const { Configuration, OpenAIApi } = require("openai");
 // route to image
 
 app.post('/images', async (req, res) => {
-
-    console.log(req.body.message)
-    
     //test with sending a dummy image
    // res.json({ url:"https://upload.wikimedia.org/wikipedia/commons/4/47/VU-Banana-1000x1000.png"})
     try {
         const response = await openai.createImage({
+            model:"dall-e-3",
             prompt: req.body.message,
             n: 1,
-            size: "1024x1024",
+            size: "1792x1024",
         
         });
         console.log(response)
